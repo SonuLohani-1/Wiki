@@ -1,0 +1,16 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+    <h3>Pages, that matches your queries: </h3>
+
+    <ul>
+        {% for entry in entries %}
+            <li><a href ="{% url 'view_title' entry %}">{{entry}}</a></li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
